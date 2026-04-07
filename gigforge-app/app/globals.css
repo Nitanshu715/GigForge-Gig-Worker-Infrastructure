@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Brand — saffron-to-orange, distinctly Indian without being cliché */
+  --brand:       #F4631A;
+  --brand-2:     #E8520D;
+  --brand-dim:   rgba(244,99,26,0.10);
+  --brand-glow:  rgba(244,99,26,0.25);
+
+  /* Surfaces — warm off-white, not cold gray */
+  --bg:          #F7F5F2;
+  --surface:     #FFFFFF;
+  --surface-2:   #F2F0EC;
+  --surface-3:   #E8E5E0;
+  --border:      #DDD9D2;
+  --border-2:    #CCC8C0;
+
+  /* Text */
+  --text:        #1C1A17;
+  --text-2:      #6B6560;
+  --text-3:      #9E9890;
+
+  /* Semantic */
+  --green:       #16A34A;
+  --green-bg:    #DCFCE7;
+  --red:         #DC2626;
+  --red-bg:      #FEE2E2;
+  --amber:       #D97706;
+  --amber-bg:    #FEF3C7;
+  --blue:        #2563EB;
+  --blue-bg:     #DBEAFE;
+  --purple:      #7C3AED;
+  --purple-bg:   #EDE9FE;
+
+  /* Layout */
+  --sidebar:     220px;
+  --topbar:      56px;
+  --radius:      10px;
+}
+
+.dark {
+  --bg:        #111009;
+  --surface:   #1A1814;
+  --surface-2: #221F1A;
+  --surface-3: #2C2924;
+  --border:    #38342C;
+  --border-2:  #46423A;
+  --text:      #F0EDE8;
+  --text-2:    #9E9890;
+  --text-3:    #6B6560;
+  --green-bg:  rgba(22,163,74,0.15);
+  --red-bg:    rgba(220,38,38,0.15);
+  --amber-bg:  rgba(217,119,6,0.15);
+  --blue-bg:   rgba(37,99,235,0.15);
+  --purple-bg: rgba(124,58,237,0.15);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Outfit', system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  font-size: 14px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.mono { font-family: 'JetBrains Mono', monospace; }
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border-2); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--text-3); }
+
+/* Focus */
+*:focus-visible { outline: 2px solid var(--brand); outline-offset: 2px; border-radius: 4px; }
+
+/* Animations */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+@keyframes pulse-dot {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50%       { transform: scale(1.4); opacity: 0.6; }
+}
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(-8px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes toast-in {
+  from { opacity: 0; transform: translateY(12px) scale(0.97); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.animate-up   { animation: fadeUp 0.22s ease both; }
+.animate-in   { animation: fadeIn 0.15s ease both; }
+.animate-spin { animation: spin 0.75s linear infinite; }
+.animate-slide { animation: slideIn 0.18s ease both; }
+.animate-toast { animation: toast-in 0.2s ease both; }
+
+/* Staggered children */
+.stagger > *:nth-child(1) { animation-delay: 0.00s; }
+.stagger > *:nth-child(2) { animation-delay: 0.04s; }
+.stagger > *:nth-child(3) { animation-delay: 0.08s; }
+.stagger > *:nth-child(4) { animation-delay: 0.12s; }
+.stagger > *:nth-child(5) { animation-delay: 0.16s; }
+.stagger > *:nth-child(6) { animation-delay: 0.20s; }
+
+/* Number display */
+.tabular { font-variant-numeric: tabular-nums; }
+
+/* Transitions */
+.transition-fast { transition: all 0.12s ease; }
+.transition-base { transition: all 0.2s ease; }
