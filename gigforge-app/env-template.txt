@@ -1,0 +1,24 @@
+# ─────────────────────────────────────────────────────────────
+# GigForge Environment Variables
+# Copy this file to .env.local and fill in the values
+# ─────────────────────────────────────────────────────────────
+
+# Resend API key — get yours free at https://resend.com
+# Free tier: 3,000 emails/month, no credit card required
+# Without this key, OTPs are shown on screen (dev mode only)
+RESEND_API_KEY=your_key_here
+
+# From email — must be a verified domain on Resend
+# Use onboarding@resend.dev for testing (only sends to your own email)
+# For production: verify your domain at resend.com/domains
+FROM_EMAIL=GigForge <onboarding@resend.dev>
+
+# ─────────────────────────────────────────────────────────────
+# Part 2 Production (paid infra) — leave blank for Part 1
+# ─────────────────────────────────────────────────────────────
+
+# Neon DB (PostgreSQL) — https://neon.tech (free)
+DATABASE_URL=
+
+# Upstash Redis — https://upstash.com (free)
+REDIS_URL=
