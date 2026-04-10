@@ -155,7 +155,7 @@ Then: Vercel Dashboard → your project → Settings → Environment Variables �
 - Select "I am an administrator" on the landing page
 - Enter email + administrator password → OTP sent to email → in
 - No signup screen, no forgot password (fixed credentials by design)
-- Administrator password: `GigForge@Admin2024`
+- Administrator password: `GigForge@Admin070105`
 - Dev OTP bypass: enter `000000` on any OTP screen
 
 ---
